@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>RV JEWELLS — Anti-Tarnish Everyday Luxury Jewelry</title>
+  <meta name="description" content="Discover RV JEWELLS, your destination for premium, anti-tarnish, waterproof, and everyday luxury jewelry. Shop necklaces, rings, earrings, and bracelets plated in 18k gold.">
+  <meta name="keywords" content="jewelry, gold jewelry, anti-tarnish, waterproof jewelry, necklaces, rings, earrings, bracelets, luxury fashion">
+  <meta name="author" content="RV JEWELLS">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="experience.css">
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. LOADING SCREEN
+       ========================================================================== -->
+  <div class="loader-wrapper" id="loader">
+    <div class="loader-logo-container">
+      <div class="loader-logo">RV</div>
+      <div class="loader-brand">RV JEWELLS</div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       NAVIGATION / HEADER
+       ========================================================================== -->
+  <header class="header transparent" id="header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="#" class="logo-wrapper" id="nav-logo-link">
+        <div class="nav-logo">RV</div>
+        <div class="nav-brand-name">RV JEWELLS</div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#collections" class="nav-link">Collections</a>
+        <a href="#best-sellers" class="nav-link">Best Sellers</a>
+        <a href="#new-arrivals" class="nav-link">New Arrivals</a>
+        <a href="#categories" class="nav-link">Shop Category</a>
+        <a href="#why-us" class="nav-link">Why Us</a>
+      </nav>
+
+      <!-- Nav Action Buttons -->
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="wishlist-trigger-btn" aria-label="Open Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="icon-badge" id="wishlist-badge">0</span>
+        </button>
+        
+        <button class="nav-icon-btn" id="cart-trigger-btn" aria-label="Open Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="icon-badge" id="cart-badge">0</span>
+        </button>
+
+        <button class="nav-icon-btn mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       2. IMMERSIVE 3D RING EXPERIENCE (replaces hero)
+       Canvas + overlay are position:fixed; scroll-driver provides scroll height.
+       After 900vh, the store content below flows in naturally.
+       ========================================================================== -->
+
+  <!-- Three.js Canvas -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- Fixed sections overlay -->
+  <div id="sections-overlay">
+
+    <!-- HERO -->
+    <section class="exp-section" id="sec-hero">
+      <div class="hero-brand">
+        <span class="hero-rv">RV</span>
+        <div class="hero-divider"></div>
+        <div class="hero-right">
+          <span class="hero-name">JEWELLS</span>
+          <span class="hero-tagline">ANTI-TARNISH EVERYDAY LUXURY</span>
+        </div>
+      </div>
+      <div class="scroll-hint" id="scroll-hint">
+        <span class="scroll-hint-text">Scroll to discover</span>
+        <div class="scroll-line-track"><div class="scroll-line-fill"></div></div>
+      </div>
+      <div class="hero-bottom-text">
+        <span>Est. India</span><span class="dot-sep">·</span>
+        <span>Handcrafted</span><span class="dot-sep">·</span>
+        <span>Anti-Tarnish</span>
+      </div>
+    </section>
+
+    <!-- SECTION 1: PURITY -->
+    <section class="exp-section" id="sec-purity">
+      <div class="split-layout">
+        <div class="split-left animate-from-left">
+          <span class="sec-label">01 — Purity</span>
+          <h2 class="sec-heading">Forged in<br><em>Pure Gold</em></h2>
+          <p class="sec-body">18 karat gold applied in precise, micro-layered coatings over surgical stainless steel. The bond is molecular. The result is permanent.</p>
+        </div>
+        <div class="split-right animate-from-right">
+          <div class="stat-grid">
+            <div class="stat-item"><span class="stat-number">18K</span><span class="stat-label">Gold Purity</span></div>
+            <div class="stat-item"><span class="stat-number">0.05<span class="stat-unit">μm</span></span><span class="stat-label">Layer Thickness</span></div>
+            <div class="stat-item"><span class="stat-number">316L</span><span class="stat-label">Steel Core</span></div>
+            <div class="stat-item"><span class="stat-number">∞</span><span class="stat-label">Durability</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CRAFTSMANSHIP -->
+    <section class="exp-section" id="sec-craft">
+      <div class="craft-layout">
+        <div class="craft-right-panel animate-from-right">
+          <span class="sec-label">02 — Craftsmanship</span>
+          <h2 class="sec-heading">Made for<br><em>Forever</em></h2>
+          <p class="sec-body">Every curve is hand-inspected under 40× magnification. Every edge ground to a mirror finish. No shortcuts. No compromises.</p>
+          <ul class="craft-list">
+            <li class="craft-item"><span class="craft-icon">◈</span><span>40× magnification quality check</span></li>
+            <li class="craft-item"><span class="craft-icon">◈</span><span>Mirror-polished to 0.01μm Ra</span></li>
+            <li class="craft-item"><span class="craft-icon">◈</span><span>Stress-tested for longevity</span></li>
+            <li class="craft-item"><span class="craft-icon">◈</span><span>Individual serial engraving</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: ANTI-TARNISH -->
+    <section class="exp-section" id="sec-tarnish">
+      <div class="tarnish-center animate-fade-up">
+        <span class="sec-label">03 — Anti-Tarnish</span>
+        <h2 class="sec-heading large-heading">Lasts a<br><em>Lifetime</em></h2>
+        <p class="sec-body centered-body">Our proprietary nano-coating creates a molecular barrier between the gold and the world. Waterproof. Sweatproof. UV-resistant. Timeless.</p>
+        <div class="shield-row">
+          <div class="shield-item"><span class="shield-icon">💧</span><span>Waterproof</span></div>
+          <div class="shield-item"><span class="shield-icon">🌡</span><span>Sweatproof</span></div>
+          <div class="shield-item"><span class="shield-icon">☀</span><span>UV Resistant</span></div>
+          <div class="shield-item"><span class="shield-icon">✦</span><span>Hypoallergenic</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: DETAIL REVEAL -->
+    <section class="exp-section" id="sec-detail">
+      <div class="detail-layout">
+        <div class="detail-left animate-from-left">
+          <span class="sec-label">04 — Detail</span>
+          <h2 class="sec-heading">Closer than<br><em>Close</em></h2>
+          <p class="sec-body">At this magnification you see what sets RV JEWELLS apart — perfect geometry, immaculate surface, precise setting.</p>
+        </div>
+        <div class="detail-markers">
+          <div class="d-marker" style="--mx:62%;--my:28%"><div class="d-dot"></div><span class="d-label">Mirror-polished band</span></div>
+          <div class="d-marker" style="--mx:70%;--my:50%"><div class="d-dot"></div><span class="d-label">Diamond prong setting</span></div>
+          <div class="d-marker" style="--mx:58%;--my:72%"><div class="d-dot"></div><span class="d-label">Inner engraving</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: COLLECTIONS -->
+    <section class="exp-section" id="sec-collections">
+      <div class="collections-top animate-fade-up">
+        <span class="sec-label">05 — Collections</span>
+        <h2 class="sec-heading collections-heading">The World of<br><em>RV JEWELLS</em></h2>
+      </div>
+      <div id="orbit-container">
+        <div class="orbit-item" id="orb-necklace"><div class="orbit-img-wrap"><img src="/assets/product_necklace.png" alt="Necklace" loading="lazy"></div><span class="orbit-label">Necklaces</span></div>
+        <div class="orbit-item" id="orb-ring"><div class="orbit-img-wrap"><img src="/assets/product_ring.png" alt="Ring" loading="lazy"></div><span class="orbit-label">Rings</span></div>
+        <div class="orbit-item" id="orb-earrings"><div class="orbit-img-wrap"><img src="/assets/product_hoops.png" alt="Earrings" loading="lazy"></div><span class="orbit-label">Earrings</span></div>
+        <div class="orbit-item" id="orb-bracelet"><div class="orbit-img-wrap"><img src="/assets/product_bracelet.png" alt="Bracelet" loading="lazy"></div><span class="orbit-label">Bracelets</span></div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: LUXURY -->
+    <section class="exp-section" id="sec-luxury">
+      <div class="luxury-words">
+        <span class="lux-word" id="lux-1">Rare.</span>
+        <span class="lux-word" id="lux-2">Refined.</span>
+        <span class="lux-word" id="lux-3">Eternal.</span>
+      </div>
+      <div class="luxury-sub"><span>RV JEWELLS — Where Gold Meets Forever</span></div>
+    </section>
+
+    <!-- SECTION 7: CTA -->
+    <section class="exp-section" id="sec-cta">
+      <div class="cta-center">
+        <span class="sec-label cta-label">Begin Your Journey</span>
+        <h2 class="cta-heading">Wear Something<br><em>Real</em></h2>
+        <p class="cta-sub">Handcrafted luxury, delivered across India. Starting at ₹999.</p>
+        <div class="cta-actions">
+          <a href="#collections" class="magnetic-btn" id="magnetic-cta">
+            <span class="btn-inner">
+              <span class="btn-text">Shop the Collection</span>
+              <span class="btn-arrow">→</span>
+            </span>
+          </a>
+          <a href="#best-sellers" class="ghost-cta-link">View Best Sellers ↗</a>
+        </div>
+        <div class="trust-row">
+          <span>✦ Free Shipping</span><span>✦ 30-Day Returns</span><span>✦ Lifetime Warranty</span>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /sections-overlay -->
+
+  <!-- Progress bar -->
+  <div class="progress-bar" id="progress-bar"></div>
+
+  <!-- Scroll driver: 900vh transparent space that drives the experience -->
+  <div id="scroll-driver"></div>
+
+  <!-- Store content begins here — flows in after experience ends -->
+  <div id="store-content">
+
+  <!-- ==========================================================================
+       3. FEATURED COLLECTIONS
+       ========================================================================== -->
+  <section class="section-padding" id="collections">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-subtitle">Curated Creations</p>
+        <h2 class="section-title">Featured Collections</h2>
+      </div>
+
+      <div class="collections-grid">
+        <!-- Card 1: Liquid Gold -->
+        <div class="collection-card" id="col-liquid-gold">
+          <img src="assets/collection_liquid_gold.png" alt="Liquid Gold Collection" class="collection-img">
+          <div class="collection-overlay">
+            <h3 class="collection-title">Liquid Gold</h3>
+            <a href="#best-sellers" class="btn-link">Explore the Melt <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 2: Modern Vintage -->
+        <div class="collection-card" id="col-modern-vintage">
+          <img src="assets/collection_vintage.png" alt="Modern Vintage Collection" class="collection-img">
+          <div class="collection-overlay">
+            <h3 class="collection-title">Modern Vintage</h3>
+            <a href="#best-sellers" class="btn-link">Shop Timeless Pieces <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. BEST SELLERS
+       ========================================================================== -->
+  <section class="section-padding" id="best-sellers">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-subtitle">Loved by Many</p>
+        <h2 class="section-title">Our Best Sellers</h2>
+      </div>
+
+      <!-- Best Sellers Grid -->
+      <div class="products-grid" id="best-sellers-grid">
+        <!-- Product items are dynamically populated in main.js, structured like so for reference -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. NEW ARRIVALS
+       ========================================================================== -->
+  <section class="section-padding" id="new-arrivals">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-subtitle">Freshly Crafted</p>
+        <h2 class="section-title">The New Arrivals</h2>
+      </div>
+
+      <!-- Asymmetric New Arrivals Grid -->
+      <div class="new-arrivals-grid products-grid" id="new-arrivals-grid">
+        <!-- Dynamically populated in main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. SHOP BY CATEGORY
+       ========================================================================== -->
+  <section class="section-padding" id="categories">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-subtitle">Curated Categories</p>
+        <h2 class="section-title">Shop by Category</h2>
+      </div>
+
+      <div class="categories-layout">
+        <!-- Necklaces -->
+        <a href="#best-sellers" class="category-item" data-category="necklaces">
+          <div class="category-circle">
+            <img src="assets/product_necklace.png" alt="Shop Necklaces">
+          </div>
+          <span class="category-name">Necklaces</span>
+        </a>
+
+        <!-- Earrings -->
+        <a href="#best-sellers" class="category-item" data-category="earrings">
+          <div class="category-circle">
+            <img src="assets/product_hoops.png" alt="Shop Earrings">
+          </div>
+          <span class="category-name">Earrings</span>
+        </a>
+
+        <!-- Rings -->
+        <a href="#best-sellers" class="category-item" data-category="rings">
+          <div class="category-circle">
+            <img src="assets/product_ring.png" alt="Shop Rings">
+          </div>
+          <span class="category-name">Rings</span>
+        </a>
+
+        <!-- Bracelets -->
+        <a href="#best-sellers" class="category-item" data-category="bracelets">
+          <div class="category-circle">
+            <img src="assets/product_bracelet.png" alt="Shop Bracelets">
+          </div>
+          <span class="category-name">Bracelets</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. WHY RV JEWELLS
+       ========================================================================== -->
+  <section class="section-padding why-us" id="why-us">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-subtitle">The Brand Standard</p>
+        <h2 class="section-title">Why Choose RV Jewells</h2>
+      </div>
+
+      <div class="why-us-grid">
+        <!-- Card 1 -->
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="why-title">18K Gold Plated</h3>
+          <p class="why-desc">Thick layers of real 18K gold over high-grade stainless steel for a premium luster.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="why-title">Anti-Tarnish Lifetime</h3>
+          <p class="why-desc">Special advanced coating keeps your jewelry brilliant. No green skin, guaranteed.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <h3 class="why-title">Waterproof & Sweatproof</h3>
+          <p class="why-desc">Shower, swim, or sweat in your jewels. Built to withstand your daily routines.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3 class="why-title">Hypoallergenic</h3>
+          <p class="why-desc">100% lead and nickel free. Gentle on even the most sensitive skin types.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. CUSTOMER REVIEWS (Infinite Testimonial Carousel)
+       ========================================================================== -->
+  <section class="section-padding reviews-section" id="testimonials">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-subtitle">Voices of Luxury</p>
+        <h2 class="section-title">What Our Collectors Say</h2>
+      </div>
+    </div>
+
+    <!-- Infinite Carousel track -->
+    <div class="reviews-carousel-container">
+      <div class="reviews-track" id="reviews-track">
+        <!-- Slide 1 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">"I've been wearing the Aura Pendant in the shower for 3 months now and it is as gold and sparkling as day one. Absolutely in love!"</p>
+          <span class="review-author">— Sophia M.</span>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">"The premium packaging, heavy feel of the jewelry, and minimalist design make these pieces feel like they cost ten times more."</p>
+          <span class="review-author">— Isabella K.</span>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">"I have extremely sensitive skin and can never wear plated jewelry. RV Jewells hoops are the only earrings that don't irritate my ears!"</p>
+          <span class="review-author">— Olivia R.</span>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">"Simple, chic, and timeless. The herringbone chain is my everyday staple. Highly recommend to everyone looking for luxury on a budget."</p>
+          <span class="review-author">— Emma H.</span>
+        </div>
+
+        <!-- Duplicated Slides for Seamless Infinite Rolling -->
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">"I've been wearing the Aura Pendant in the shower for 3 months now and it is as gold and sparkling as day one. Absolutely in love!"</p>
+          <span class="review-author">— Sophia M.</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">"The premium packaging, heavy feel of the jewelry, and minimalist design make these pieces feel like they cost ten times more."</p>
+          <span class="review-author">— Isabella K.</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">"I have extremely sensitive skin and can never wear plated jewelry. RV Jewells hoops are the only earrings that don't irritate my ears!"</p>
+          <span class="review-author">— Olivia R.</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">"Simple, chic, and timeless. The herringbone chain is my everyday staple. Highly recommend to everyone looking for luxury on a budget."</p>
+          <span class="review-author">— Emma H.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. INSTAGRAM GALLERY
+       ========================================================================== -->
+  <section class="section-padding" id="instagram">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-subtitle">As Seen On You</p>
+        <h2 class="section-title">Shop The Look</h2>
+      </div>
+
+      <div class="insta-grid">
+        <div class="insta-card">
+          <img src="assets/product_ring.png" alt="Instagram Showcase 1" class="insta-img">
+          <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
+        </div>
+
+        <div class="insta-card">
+          <img src="assets/product_necklace.png" alt="Instagram Showcase 2" class="insta-img">
+          <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
+        </div>
+
+        <div class="insta-card">
+          <img src="assets/hero_jewelry.png" alt="Instagram Showcase 3" class="insta-img">
+          <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
+        </div>
+
+        <div class="insta-card">
+          <img src="assets/product_bracelet.png" alt="Instagram Showcase 4" class="insta-img">
+          <div class="insta-overlay"><i class="fa-brands fa-instagram"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. NEWSLETTER SIGNUP
+       ========================================================================== -->
+  <section class="section-padding newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-container">
+        <p class="section-subtitle">Become An Insider</p>
+        <h2 class="section-title">Join The Club</h2>
+        <p>Subscribe to receive updates on collections, exclusive VIP early access, and jewelry care tips directly in your inbox.</p>
+        
+        <form class="newsletter-form" id="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing! Your VIP early access awaits.'); this.reset();">
+          <input type="email" placeholder="Enter your email address" class="newsletter-input" required aria-label="Email address for newsletter">
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Logo Column -->
+        <div class="footer-logo-col">
+          <a href="#" class="footer-logo-wrapper">
+            <div class="footer-logo">RV</div>
+            <div class="footer-brand-name">RV JEWELLS</div>
+          </a>
+          <p class="footer-desc">Premium anti-tarnish jewelry designed for the modern collection. High-end minimal everyday luxury at an affordable value.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer-social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" class="footer-social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Links Col 1 -->
+        <div>
+          <h4 class="footer-title">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#best-sellers" class="footer-link">Best Sellers</a></li>
+            <li><a href="#new-arrivals" class="footer-link">New Arrivals</a></li>
+            <li><a href="#collections" class="footer-link">Liquid Gold</a></li>
+            <li><a href="#collections" class="footer-link">Modern Vintage</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Col 2 -->
+        <div>
+          <h4 class="footer-title">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Shipping & Returns</a></li>
+            <li><a href="#" class="footer-link">Lifetime Warranty Info</a></li>
+            <li><a href="#" class="footer-link">Jewelry Care Guide</a></li>
+            <li><a href="#" class="footer-link">FAQ & Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Info Col -->
+        <div>
+          <h4 class="footer-title">Our Atelier</h4>
+          <div class="footer-info">
+            <div class="footer-info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>10 Luxury Lane, Suite 100, Beverly Hills, CA 90210</span>
+            </div>
+            <div class="footer-info-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+1 (800) 555-GOLD</span>
+            </div>
+            <div class="footer-info-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>care@rvjewells.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 RV JEWELLS. All rights reserved. Elegant styling by Antigravity.</p>
+        <div class="footer-payment-icons">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-amex"></i>
+          <i class="fa-brands fa-cc-apple-pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       SIDE DRAWERS (Cart & Wishlist) & MODAL BACKDROPS
+       ========================================================================== -->
+  
+  <!-- Backdrop shared -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- Cart Drawer -->
+  <div class="drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title"><i class="fa-solid fa-bag-shopping"></i> Shopping Cart</h3>
+      <button class="drawer-close-btn" id="cart-close-btn" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <div class="drawer-content">
+      <!-- Empty State -->
+      <div class="drawer-empty-state" id="cart-empty-state">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <p>Your shopping cart is empty.</p>
+        <a href="#best-sellers" class="btn btn-primary" id="cart-empty-shop-btn">Continue Shopping</a>
+      </div>
+
+      <!-- Cart Item Container -->
+      <div class="drawer-items" id="cart-items-container">
+        <!-- Dynamically generated items -->
+      </div>
+    </div>
+
+    <!-- Summary / Checkout Footer -->
+    <div class="drawer-footer" id="cart-footer">
+      <div class="drawer-summary-row">
+        <span>Shipping:</span>
+        <span class="free-shipping">FREE</span>
+      </div>
+      <div class="drawer-summary-row total">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal">₹0.00</span>
+      </div>
+      <button class="drawer-checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Wishlist Drawer -->
+  <div class="drawer" id="wishlist-drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title"><i class="fa-regular fa-heart"></i> My Wishlist</h3>
+      <button class="drawer-close-btn" id="wishlist-close-btn" aria-label="Close Wishlist"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="drawer-content">
+      <!-- Empty State -->
+      <div class="drawer-empty-state" id="wishlist-empty-state">
+        <i class="fa-regular fa-heart"></i>
+        <p>Your wishlist is empty.</p>
+        <a href="#best-sellers" class="btn btn-primary" id="wishlist-empty-shop-btn">View Best Sellers</a>
+      </div>
+
+      <!-- Wishlist Item Container -->
+      <div class="drawer-items" id="wishlist-items-container">
+        <!-- Dynamically generated items -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PRODUCT QUICK VIEW MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal-container" id="quick-view-modal">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close details"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div class="modal-gallery">
+        <img src="" alt="" id="modal-img">
+      </div>
+
+      <div class="modal-details">
+        <span class="modal-category" id="modal-category">Necklaces</span>
+        <h3 class="modal-title" id="modal-title">Product Name</h3>
+        
+        <div class="modal-price-row">
+          <span class="modal-price" id="modal-price">₹0.00</span>
+          <span class="modal-old-price" id="modal-old-price">₹0.00</span>
+        </div>
+
+        <p class="modal-desc" id="modal-desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+
+        <div class="modal-features">
+          <div class="modal-feature-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Anti-Tarnish Plating</span>
+          </div>
+          <div class="modal-feature-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Waterproof & Swimproof</span>
+          </div>
+          <div class="modal-feature-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>18K Gold Plated</span>
+          </div>
+          <div class="modal-feature-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Hypoallergenic Base</span>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-primary modal-add-to-cart" id="modal-add-to-cart-btn">Add to Cart</button>
+          <button class="modal-wishlist-toggle" id="modal-wishlist-toggle-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /store-content -->
+
+  <!-- ==========================================================================
+       Scripts
+       ========================================================================== -->
+  <!-- Experience (ES module — Three.js + GSAP + Lenis) -->
+  <script type="module" src="experience.js"></script>
+
+  <!-- Store interactions (cart, wishlist, product modal, GSAP scroll reveals) -->
+  <!-- GSAP from CDN for main.js (non-module) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RV JEWELLS — The Ring Experience</title>
+  <meta name="description" content="An immersive 3D scroll journey through the art and soul of RV JEWELLS goldsmithing.">
+  <meta name="theme-color" content="#F8F5EF">
+  <link rel="stylesheet" href="experience.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================================================
+       THREE.JS CANVAS — Fixed, full-screen, z-index: 5
+       ============================================================ -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- ============================================================
+       SECTIONS OVERLAY — Fixed, full-screen, z-index: 10
+       All section text content lives here.
+       ============================================================ -->
+  <div id="sections-overlay">
+
+    <!-- HERO -->
+    <section class="exp-section" id="sec-hero">
+      <div class="hero-brand">
+        <span class="hero-rv">RV</span>
+        <div class="hero-divider"></div>
+        <div class="hero-right">
+          <span class="hero-name">JEWELLS</span>
+          <span class="hero-tagline">ANTI-TARNISH EVERYDAY LUXURY</span>
+        </div>
+      </div>
+      <div class="scroll-hint" id="scroll-hint">
+        <span class="scroll-hint-text">Scroll to discover</span>
+        <div class="scroll-line-track">
+          <div class="scroll-line-fill"></div>
+        </div>
+      </div>
+      <div class="hero-bottom-text">
+        <span>Est. India</span>
+        <span class="dot-sep">·</span>
+        <span>Handcrafted</span>
+        <span class="dot-sep">·</span>
+        <span>Anti-Tarnish</span>
+      </div>
+    </section>
+
+    <!-- SECTION 1: PURITY -->
+    <section class="exp-section" id="sec-purity">
+      <div class="split-layout">
+        <div class="split-left animate-from-left">
+          <span class="sec-label">01 — Purity</span>
+          <h2 class="sec-heading">Forged in<br><em>Pure Gold</em></h2>
+          <p class="sec-body">18 karat gold applied in precise, micro-layered coatings over surgical stainless steel. The bond is molecular. The result is permanent.</p>
+        </div>
+        <div class="split-right animate-from-right">
+          <div class="stat-grid">
+            <div class="stat-item">
+              <span class="stat-number">18K</span>
+              <span class="stat-label">Gold Purity</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">0.05<span class="stat-unit">μm</span></span>
+              <span class="stat-label">Layer Thickness</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">316L</span>
+              <span class="stat-label">Steel Core</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">∞</span>
+              <span class="stat-label">Durability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CRAFTSMANSHIP -->
+    <section class="exp-section" id="sec-craft">
+      <div class="craft-layout">
+        <div class="craft-right-panel animate-from-right">
+          <span class="sec-label">02 — Craftsmanship</span>
+          <h2 class="sec-heading">Made for<br><em>Forever</em></h2>
+          <p class="sec-body">Every curve is hand-inspected under 40× magnification. Every edge ground to a mirror finish. No shortcuts. No compromises.</p>
+          <ul class="craft-list">
+            <li class="craft-item">
+              <span class="craft-icon">◈</span>
+              <span>40× magnification quality check</span>
+            </li>
+            <li class="craft-item">
+              <span class="craft-icon">◈</span>
+              <span>Mirror-polished to 0.01μm Ra</span>
+            </li>
+            <li class="craft-item">
+              <span class="craft-icon">◈</span>
+              <span>Stress-tested for longevity</span>
+            </li>
+            <li class="craft-item">
+              <span class="craft-icon">◈</span>
+              <span>Individual serial engraving</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: ANTI-TARNISH -->
+    <section class="exp-section" id="sec-tarnish">
+      <div class="tarnish-center animate-fade-up">
+        <span class="sec-label">03 — Anti-Tarnish</span>
+        <h2 class="sec-heading large-heading">Lasts a<br><em>Lifetime</em></h2>
+        <p class="sec-body centered-body">Our proprietary nano-coating creates a molecular barrier between the gold and the world. Waterproof. Sweatproof. UV-resistant. Timeless.</p>
+        <div class="shield-row">
+          <div class="shield-item">
+            <span class="shield-icon">💧</span>
+            <span>Waterproof</span>
+          </div>
+          <div class="shield-item">
+            <span class="shield-icon">🌡</span>
+            <span>Sweatproof</span>
+          </div>
+          <div class="shield-item">
+            <span class="shield-icon">☀</span>
+            <span>UV Resistant</span>
+          </div>
+          <div class="shield-item">
+            <span class="shield-icon">✦</span>
+            <span>Hypoallergenic</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: DETAIL REVEAL -->
+    <section class="exp-section" id="sec-detail">
+      <div class="detail-layout">
+        <div class="detail-left animate-from-left">
+          <span class="sec-label">04 — Detail</span>
+          <h2 class="sec-heading">Closer than<br><em>Close</em></h2>
+          <p class="sec-body">At this magnification you see what sets RV JEWELLS apart — perfect geometry, immaculate surface, precise setting.</p>
+        </div>
+        <div class="detail-markers">
+          <div class="d-marker" style="--mx: 62%; --my: 28%;">
+            <div class="d-dot"></div>
+            <span class="d-label">Mirror-polished band</span>
+          </div>
+          <div class="d-marker" style="--mx: 70%; --my: 50%;">
+            <div class="d-dot"></div>
+            <span class="d-label">Diamond prong setting</span>
+          </div>
+          <div class="d-marker" style="--mx: 58%; --my: 72%;">
+            <div class="d-dot"></div>
+            <span class="d-label">Inner engraving</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: COLLECTIONS -->
+    <section class="exp-section" id="sec-collections">
+      <div class="collections-top animate-fade-up">
+        <span class="sec-label">05 — Collections</span>
+        <h2 class="sec-heading collections-heading">The World of<br><em>RV JEWELLS</em></h2>
+      </div>
+      <!-- Orbit container — GSAP will position relative to ring -->
+      <div id="orbit-container">
+        <div class="orbit-item" id="orb-necklace">
+          <div class="orbit-img-wrap">
+            <img src="/assets/product_necklace.png" alt="Gold Necklace" loading="lazy">
+          </div>
+          <span class="orbit-label">Necklaces</span>
+        </div>
+        <div class="orbit-item" id="orb-ring">
+          <div class="orbit-img-wrap">
+            <img src="/assets/product_ring.png" alt="Gold Ring" loading="lazy">
+          </div>
+          <span class="orbit-label">Rings</span>
+        </div>
+        <div class="orbit-item" id="orb-earrings">
+          <div class="orbit-img-wrap">
+            <img src="/assets/product_hoops.png" alt="Gold Earrings" loading="lazy">
+          </div>
+          <span class="orbit-label">Earrings</span>
+        </div>
+        <div class="orbit-item" id="orb-bracelet">
+          <div class="orbit-img-wrap">
+            <img src="/assets/product_bracelet.png" alt="Gold Bracelet" loading="lazy">
+          </div>
+          <span class="orbit-label">Bracelets</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: LUXURY SHOWCASE -->
+    <section class="exp-section" id="sec-luxury">
+      <div class="luxury-words">
+        <span class="lux-word" id="lux-1">Rare.</span>
+        <span class="lux-word" id="lux-2">Refined.</span>
+        <span class="lux-word" id="lux-3">Eternal.</span>
+      </div>
+      <div class="luxury-sub">
+        <span>RV JEWELLS — Where Gold Meets Forever</span>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CTA -->
+    <section class="exp-section" id="sec-cta">
+      <div class="cta-center">
+        <span class="sec-label cta-label">Begin Your Journey</span>
+        <h2 class="cta-heading">Wear Something<br><em>Real</em></h2>
+        <p class="cta-sub">Handcrafted luxury, delivered across India. Starting at ₹999.</p>
+        <div class="cta-actions">
+          <a href="index.html" class="magnetic-btn" id="magnetic-cta">
+            <span class="btn-inner">
+              <span class="btn-text">Shop the Collection</span>
+              <span class="btn-arrow">→</span>
+            </span>
+          </a>
+          <a href="index.html#collections" class="ghost-cta-link">View Lookbook ↗</a>
+        </div>
+        <div class="trust-row">
+          <span>✦ Free Shipping</span>
+          <span>✦ 30-Day Returns</span>
+          <span>✦ Lifetime Warranty</span>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /sections-overlay -->
+
+  <!-- ============================================================
+       SCROLL DRIVER — transparent, 900vh, drives scroll position
+       ============================================================ -->
+  <div id="scroll-driver"></div>
+
+  <!-- Back to store link -->
+  <a href="index.html" class="back-link" id="back-link">
+    <span class="back-arrow">←</span>
+    <span class="back-text">Store</span>
+  </a>
+
+  <!-- Progress bar -->
+  <div class="progress-bar" id="progress-bar"></div>
+
+  <script type="module" src="experience.js"></script>
+</body>
+</html>
