@@ -10,12 +10,12 @@
      5. Mouse tilt (hero only) + magnetic CTA
    ========================================================================== */
 
-import * as THREE from 'three';
-import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Observer } from 'gsap/Observer';
-import Lenis from 'lenis';
+import * as THREE from 'https://esm.sh/three@0.160.0';
+import { RoomEnvironment } from 'https://esm.sh/three@0.160.0/examples/jsm/environments/RoomEnvironment.js';
+import gsap from 'https://esm.sh/gsap@3.12.2';
+import { ScrollTrigger } from 'https://esm.sh/gsap@3.12.2/ScrollTrigger';
+import { Observer } from 'https://esm.sh/gsap@3.12.2/Observer';
+import Lenis from 'https://esm.sh/lenis@1.0.29';
 
 gsap.registerPlugin(ScrollTrigger, Observer);
 
