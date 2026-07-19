@@ -15,7 +15,7 @@ import { RoomEnvironment } from 'https://esm.sh/three@0.160.0/examples/jsm/envir
 import gsap from 'https://esm.sh/gsap@3.12.2';
 import { ScrollTrigger } from 'https://esm.sh/gsap@3.12.2/ScrollTrigger';
 import { Observer } from 'https://esm.sh/gsap@3.12.2/Observer';
-import Lenis from 'https://esm.sh/lenis@1.0.29';
+import Lenis from 'https://esm.sh/lenis';
 
 gsap.registerPlugin(ScrollTrigger, Observer);
 
